@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>INICIO - Réplica Montúfar</title>
+    <link rel="icon" href="images/MontúfarIcon.png">
+    <link rel="preload" href="css/normalize.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="CSS/styles2.css" as="stylesheet">
+    <link rel="stylesheet" href="CSS/styles2.css">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <a id="button">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <a href="https://wa.me/593968047137?text=Hola!,%20estaremos%20gustosos%20de%20resolver%20cualquier%20tipo%20de%20duda%20o%20inquietud%20relacionada%20a%20la%20p%C3%A1gina%20web%20de%20la%20Unidad%20Educativa%20R%C3%A9plica%20Mont%C3%BAfar." class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+
+    <header>
+        <h1><span>Unidad Educativa</span> RÉPLICA MONTÚFAR</h1>
+    </header>
+
+    <div class="nav_container">
+        <div class="img">
+            <img src="images/Montúfar.png">
+        </div>
+        <nav>
+            <ul class="nav_list">
+                <a href="Index.html" class="list_links_default">Inicio</a>
+                <a href="QuiénesSomos.html" class="list_links">Quiénes Somos</a>              
+                <a href="OfertaEducativa.html" class="list_links">Oferta Educativa</a>
+                <a href="InnovacionEducativa.html" class="list_links">Innovación Educativa</a>
+                <a href="BachiTec.html" class="list_links">Bachillerato Técnico</a>
+                <a href="Periodico.html" class="list_links">Revista Institucional</a>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="slider">
+        <div class="slide active">
+            <img src="images/slid_escudo.jpg" alt="">
+            <div class="info2">
+                <a class="btn_3" href="QuiénesSomos.html">Quiénes Somos</a>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="images/slid_estudiantes.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="images/slid_docentes.jpg" alt="">
+        </div>
+        <div class="slide">
+            <img src="images/slid_tecnico.jpg" alt="">
+            <div class="info2">
+                <a class="btn_3" href="BachiTec.html">Información</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <svg class="fas fa-chevron-left prev-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>              
+            <svg class="fas fa-chevron-right next-btn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+            </svg>              
+        </div>
+        <div class="navigation-visibility">
+            <div class="slide-icon active"></div>
+            <div class="slide-icon"></div>
+            <div class="slide-icon"></div>
+            <div class="slide-icon"></div>
+        </div>
+    </div>
+
+    <div class="container_vid">
+        <video width="640px" height="480px" autoplay muted playsinline loop>
+            <source src="images/COLEGIO.mp4" type="video/mp4">
+        </video>
+        <div class="container_p">
+            <p>Somos una Unidad Educativa del Milenio,<br> ubicados en la parroquia de Calderón.</p>
+            <div class="btn_2">
+                <a href="QuiénesSomos.html">Conoce más sobre nosotros</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const slider = document.querySelector(".slider")
+        const nextBtn = document.querySelector(".next-btn")
+        const prevBtn = document.querySelector(".prev-btn")
+        const slides = document.querySelectorAll(".slide")
+        const slideIcons = document.querySelectorAll(".slide-icon")
+        const numberOfslides = slides.length;
+        var slideNumber = 0;
+
+        //nxt
+        nextBtn.addEventListener("click",  () => {
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+            slideIcons.forEach((slideIcon) => {
+                slideIcon.classList.remove("active");
+            });
+            slideNumber++;
+
+            if (slideNumber > (numberOfslides - 1)){
+                slideNumber = 0;
+            }
+
+            slides[slideNumber].classList.add("active");
+            slideIcons[slideNumber].classList.add("active");
+        });
+
+        //prev
+        prevBtn.addEventListener("click", () =>{
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+            slideIcons.forEach((slideIcon) => {
+                slideIcon.classList.remove("active");
+            });
+            slideNumber--;
+
+            if (slideNumber < 0){
+                slideNumber = numberOfslides - 1;
+            }
+
+            slides[slideNumber].classList.add("active");
+            slideIcons[slideNumber].classList.add("active");
+        });
+
+        //autoplay
+        var playSlider;
+
+        var repeater = () => {
+            playSlider = setInterval(function(){
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+                slideIcons.forEach((slideIcon) => {
+                    slideIcon.classList.remove("active");
+                });
+
+                slideNumber++;
+
+                if (slideNumber > (numberOfslides - 1)){
+                    slideNumber = 0;
+                }
+
+                slides[slideNumber].classList.add("active");
+                slideIcons[slideNumber].classList.add("active");
+            }, 6000);
+        }
+        repeater();
+
+        //stop mouse
+        slider.addEventListener("mouseover", () => {
+            clearInterval(playSlider);
+        });
+
+        //play mouse
+        slider.addEventListener("mouseout", () => {
+            repeater();
+        });
+    </script>
+
+    <div class="container_info">
+        <p class="p-i"><span>¿Necesitas más información?</span> Déjanos tu mensaje y nos comunicaremos contigo.</p>
+        <a class="a-i" href="https://wa.me/593968047137?text=Hola!,%20estaremos%20gustosos%20de%20resolver%20cualquier%20tipo%20de%20duda%20o%20inquietud%20relacionada%20a%20la%20p%C3%A1gina%20web%20de%20la%20Unidad%20Educativa%20R%C3%A9plica%20Mont%C3%BAfar.">WhatsApp</a>
+    </div>
+
+    <div class="container_gallery">
+        <div class="text">
+            <p class="p-g">Conoce nuestras instalaciones</p>
+            <p class="p-g2">Contamos con un espacio distribuido en áreas deportivas,  bar comedor,  con mobiliario  y apoyo tecnológico  adecuado  y de esparcimiento  con espacios flexibles y adaptables para las necesidades de nuestros estudiantes.</p>
+        </div>
+        <div class="gallery">
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Patio Central</h2>
+                    <P>Amplio patio central, ubicado en la entrada de la Institución.<br>En este espacio se desarrollan la mayoría de nuestros eventos sociales, culturales y cívicos.<br>Interconecta a las demás áreas principales.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/va3PKvU4WB">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/va3PKvU4WB"></iframe>
+            </div>
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Biblioteca</h2>
+                    <P>Espacio habilitado como herramienta para el desarrollo del aprendizaje de los estudiantes, además de estar adecuado para llevar a cabo reuniones, capacitaciones y eventos importantes.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/caA411cGBD">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/caA411cGBD"></iframe>            
+            </div>
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Bloque de aulas</h2>
+                    <P>La Institución cuenta con dos bloques de aulas que cubren nuestra oferta educativa.<br>Estos bloques poseen facilidades para la movilización de nuestros estudiantes.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/ubOlrJktIe">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/ubOlrJktIe"></iframe>
+            </div>
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Aula Iniciales</h2>
+                    <P>Las aulas para nuestros estudiantes de inicial están completamente dotadas para la integración de los niños al proceso educativo.<br>Todo esto complementado con el acompañamiento de nuestros docentes del área inicial.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/9q3FUIFAGK">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/9q3FUIFAGK"></iframe>            
+            </div>
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Laboratorio Química</h2>
+                    <P>Moderno laboratorio para el área de química, equipado con los instrumentos necesarios para el desarrollo de esta materia, permitiendo a nuestros estudiantes adentrarse en la investigación, realizar experimentos y demás actividades que les serán de ayuda para fortalecer sus conocimientos.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/IOhJYGH20u">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/IOhJYGH20u"></iframe>            
+            </div>
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Laboratorio Física</h2>
+                    <P>Moderno laboratorio para el área de física, equipado con los instrumentos necesarios para el desarrollo de esta materia, permitiendo a nuestros estudiantes adentrarse en la investigación, realizar experimentos y demás actividades que les serán de ayuda para fortalecer sus conocimientos.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/r5bcyb2akT">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/r5bcyb2akT"></iframe>
+            </div>
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Laboratorio Computación</h2>
+                    <P>La Institución cuenta con 4 laboratorios de computación, dotados con computadoras y demás tecnologías necesarias para permitir a nuestros estudiantes de bachillerato técnico en informática tener una experiencia única con el aprendizaje práctico y didáctico.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/VYB0MaUxK3">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/VYB0MaUxK3"></iframe>
+            </div>
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Cancha Básquet</h2>
+                    <P>Espacio disponible para que nuestros estudiantes puedan mantenerse activos físicamente, esta cancha es utilizada en clases de educación física, en recesos y para campeonatos desarrollados en la Institución.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/kndDxOxyEK">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/kndDxOxyEK"></iframe>
+            </div>
+            <div class="container-360">
+                <div class="info-container">
+                    <h2 class="p-g">Cancha Fútbol</h2>
+                    <P>Espacio disponible para que nuestros estudiantes puedan mantenerse activos físicamente, esta cancha es utilizada en clases de educación física, en recesos y para campeonatos desarrollados en la Institución.</P>
+                </div>
+                <a href="https://panoraven.com/es/embed/jNGrK2qD5d">Visualizar en 360°</a>
+                <iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/es/embed/jNGrK2qD5d"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_f">
+        <div class="myv">
+            <div class="mision">
+                <p class="p-m">MISIÓN</p>
+                <P class="p-m2">La Unidad Educativa Réplica Montúfar es una Institución del milenio que ofrece un servicio educativo integral e incluyente de calidad y calidez, desde Educación Inicial hasta Bachillerato, en sus modalidades General Unificado y Técnico en Informática; para formar jóvenes críticos, dispuestos a mejorar la calidad educativa, mediante procesos innovadores y evaluaciones rigurosas, que permitan y garanticen la participación de la comunidad, respondiendo a las exigencias educativas y sociales, fortaleciendo y respetando el buen vivir.</P>
+            </div>
+            <div class="vision">
+                <p class="p-m">VISIÓN</p>
+                <p class="p-m2">La Unidad Educativa Réplica Montúfar, en el 2025, será un referente Institucional, con excelencia académica, científica y técnica, formando jóvenes solidarios, informados, investigadores, proactivos, competentes, emprendedores y creativos, reflejando en los estudiantes un pensamiento crítico y con práctica de valores, con capacidad de contribuir a la sociedad para alcanzar un mundo de paz y respeto al medio ambiente.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification">
+        <p>¡SOMOS RÉPLICA MONTÚFAR! 👋</p>
+        <span class="notification__progress"></span>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+  
+    <script type="text/javascript">
+      var btn = $('#button');
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 300) {
+          btn.addClass('show');
+        } else {
+          btn.removeClass('show');
+        }
+      });
+      btn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '300');
+      });
+    </script> 
+
+    <footer class="end">
+        <div class="group1">
+            <div class="box">
+                <div class="frase">
+                    <h2>"La educación no cambia el mundo, cambia a las personas que van a cambiar el mundo"</h2>
+                    <p>- Paulo Freire</p>
+                </div>
+                <a href="Index.html">
+                    <img src="images/Montúfarwht.png" alt="">
+                </a>
+            </div>
+            <div class="box2">
+                <h2>Nuestras redes:</h2>
+                <div class="REDES">
+                    <div class="redes">
+                        <a href=""><img src="images/facebook.png" alt=""></a>
+                    </div>
+                    <div class="redes">
+                        <a href=""><img src="images/instagram.png" alt=""></a>
+                    </div>
+                    <div class="redes">
+                        <a href=""><img src="images/youtube.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group2">
+            <p>Todos los derechos reservados. Mathias Núñez ©</p>
+        </div>
+    </footer>
+</body>
+</html>
